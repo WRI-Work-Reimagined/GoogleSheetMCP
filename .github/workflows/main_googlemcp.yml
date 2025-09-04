@@ -47,14 +47,13 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
-      
+
       - name: Login to Azure
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_5ACAE198E9AC4D92A1A6642E7EECEE21 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_D3B8E365A786489E952E7606C49CCAF7 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_217E90450073461A94CEF8933B4430C9 }}
-          enable-AzPSSession: true
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A6E0A4FCE519485595828954F0C9B40D }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_30510B72FFD649E49CF0F5CC4564F8ED }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_D31411C9FE2D40C6AD87BC84480857AF }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
@@ -63,5 +62,3 @@ jobs:
           app-name: 'GoogleMCP'
           slot-name: 'Production'
           package: .
-
-          
